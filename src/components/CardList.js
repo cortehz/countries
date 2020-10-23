@@ -1,7 +1,5 @@
 import React from "react";
 import Card from "./Card";
-import styled from "styled-components";
-// import "./card.scss";
 
 const CardList = ({ countries }) => {
   return (
