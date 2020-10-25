@@ -7,11 +7,6 @@ const CountryShow = (props) => {
     return country.name.includes(props.match.params.name);
   });
 
-  // destructuring assignment
-  // sets firstName = arr[0]
-  // and surname = arr[1]
-  console.log(currentCountry[0]);
-
   const borderName = () => {
     const borderArray = currentCountry[0].borders;
     return props.countries
