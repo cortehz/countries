@@ -52,38 +52,38 @@ const CountryShow = (props) => {
             <Details>
               <ul>
                 <li>
-                  <strong>Name: </strong>
+                  <span>Name: </span>
                   {currentCountry[0].nativeName}
                 </li>
                 <li>
-                  <strong>Population: </strong>
+                  <span>Population: </span>
                   {currentCountry[0].population.toLocaleString()}
                 </li>
                 <li>
-                  <strong>Region: </strong>
+                  <span>Region: </span>
                   {currentCountry[0].region}
                 </li>
                 <li>
-                  <strong>Sub Region: </strong>
+                  <span>Sub Region: </span>
                   {currentCountry[0].subregion}
                 </li>
                 <li>
-                  <strong>Capital: </strong>
+                  <span>Capital: </span>
                   {currentCountry[0].capital}
                 </li>
               </ul>
 
               <ul>
                 <li>
-                  <strong>Top level domain: </strong>
+                  <span>Top level domain: </span>
                   {currentCountry[0].topLevelDomain}
                 </li>
                 <li>
-                  <strong>Currency: </strong>
+                  <span>Currency: </span>
                   {currentCountry[0].currencies[0].name}
                 </li>
                 <li>
-                  <strong>Languages: </strong>
+                  <span>Languages: </span>
                   {currentCountry[0].languages[0].name}
                 </li>
               </ul>
@@ -140,7 +140,10 @@ const CountryDetail = styled.div`
     padding: 0;
 
     li {
-      list-style: none;
+      list-style: none;  
+      span {
+        font-weight: 600;
+      }
     }
   }
 `;
