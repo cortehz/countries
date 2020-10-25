@@ -18,7 +18,7 @@ const CountryShow = (props) => {
       .map((country) => country.name);
   };
 
-  if (!Array.isArray(currentCountry) || !currentCountry.length) {
+  if (!Array.isArray(currentCountry)) {
     return <div>loading country</div>;
   } else
     return (
