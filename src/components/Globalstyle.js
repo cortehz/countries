@@ -119,7 +119,9 @@ export const GlobalStyles = createGlobalStyle `
       padding: .5rem 1rem;
       margin-bottom: 10px;
       box-shadow: rgba(0, 0, 0, 0.25) 0px 20px 40px -14px;
-        margin-right:10px;
+      margin-right:10px;
+     
+
       a {
         text-decoration: none;
         color: ${({ theme }) => theme.text};

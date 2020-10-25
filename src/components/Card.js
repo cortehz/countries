@@ -21,15 +21,15 @@ const Card = ({ name, flag, capital, population, region }) => {
           <h2>{name}</h2>
           <ul>
             <li className="detail-list">
-              <strong>Population: </strong>
+              <span>Population: </span>
               {population.toLocaleString()}
             </li>
             <li className="detail-list">
-              <strong>Region: </strong>
+              <span>Region: </span>
               {region}
             </li>
             <li className="detail-list">
-              <strong>Capital: </strong>
+              <span>Capital: </span>
               {capital}
             </li>
           </ul>
@@ -47,6 +47,10 @@ const Country = styled.div`
     padding: 0;
     li {
       list-style: none;
+       
+      span {
+        font-weight: 800;
+      }
     }
   }
 `;
