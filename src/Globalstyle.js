@@ -1,28 +1,16 @@
 import { createGlobalStyle } from "styled-components";
 
-const bodyBackground = ({ theme }) => {
-  return theme.body;
-};
-
-const cardBackground = ({ theme }) => {
-  return theme.background;
-};
-
-const textColor = ({ theme }) => {
-  return theme.text;
-};
-
 export const GlobalStyles = createGlobalStyle`
   body {
-    background: ${bodyBackground};
-    color: ${textColor};
+    background: ${({ theme }) => theme.body};
+    color: ${({ theme }) => theme.text};
     font-family: Nunito Sans, Helvetica, Arial, Roboto, sans-serif;
     transition: all 0.20s ease-in-out;
   }
   
 .back-button {
-  color: ${textColor};
-  background: ${cardBackground};
+  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.background};
   margin: 3rem 5rem;
   padding: 10px 20px;
   display: flex;
@@ -30,15 +18,7 @@ export const GlobalStyles = createGlobalStyle`
   border: 0;
 }
 
-
 @media (max-width: 1032px) {
-    nav {
-      padding: 1rem 2rem;
-      a {
-       font-size: 1.5rem;
-      }
-    }
-
   .filter{
    margin: 2rem 2rem;
     }
