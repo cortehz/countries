@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import styled from "styled-components";
+import Borders from "./Borders";
 
 const CountryShow = (props) => {
   const currentCountry = props.countries.filter((country) => {
@@ -18,11 +18,11 @@ const CountryShow = (props) => {
       .map((country) => country.name);
   };
 
-  if (!Array.isArray(currentCountry)) {
+  if (!currentCountry[0]) {
     return <div>loading country</div>;
   } else
     return (
-      <>
+      <React.Fragment>
         <button className="back-button" onClick={() => props.history.goBack()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
@@ -89,25 +89,10 @@ const CountryShow = (props) => {
               </ul>
             </Details>
 
-            <div className="borders">
-              <p>Borders:</p>
-              <ul>
-                {currentCountry[0].borders.length !== 0 ? (
-                  borderName().map((name) => {
-                    return (
-                      <li className="border-country" key={name}>
-                        <Link to={`/countries/${name}`}>{name}</Link>
-                      </li>
-                    );
-                  })
-                ) : (
-                  <li>None</li>
-                )}
-              </ul>
-            </div>
+            <Borders countries={currentCountry[0]} borderNames={borderName} />
           </DetailContainer>
         </CountryDetail>
-      </>
+      </React.Fragment>
     );
 };
 
@@ -140,7 +125,7 @@ const CountryDetail = styled.div`
     padding: 0;
 
     li {
-      list-style: none;  
+      list-style: none;
       span {
         font-weight: 600;
       }

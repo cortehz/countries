@@ -1,9 +1,9 @@
 import React, { useEffect, useState } from "react";
-import { Router, Route } from "react-router-dom";
+import { Router, Route, Switch } from "react-router-dom";
 import { ThemeProvider } from "styled-components";
-import { useDarkMode } from "./components/useDarkMode";
-import { GlobalStyles } from "./components/Globalstyle";
-import { lightTheme, darkTheme } from "./components/Themes";
+import { useDarkMode } from "./useDarkMode";
+import { GlobalStyles } from "./Globalstyle";
+import { lightTheme, darkTheme } from "./Themes";
 import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
@@ -31,12 +31,14 @@ const App = () => {
         <GlobalStyles />
         <div className="App">
           <Header theme={theme} themeToggler={themeToggler} />
-          <Route path="/" exact render={() => <Home countries={state} />} />
-          <Route
-            path="/countries/:name"
-            exact
-            render={(props) => <CountryShow {...props} countries={state} />}
-          />
+          <Switch>
+            <Route path="/" exact render={() => <Home countries={state} />} />
+            <Route
+              path="/countries/:name"
+              exact
+              render={(props) => <CountryShow {...props} countries={state} />}
+            />
+          </Switch>
         </div>
       </Router>
     </ThemeProvider>

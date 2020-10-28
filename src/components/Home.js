@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import SearchBox from "../components/SearchBox";
 import RegionDrop from "../components/RegionDrop";
 import CardList from "../components/CardList";
+import styled from 'styled-components'
 
 const Home = ({ countries }) => {
-  // const [state, setState] = useState({ countries: [], searchfield: "" });
+
   const [region, setRegion] = useState("");
   const [search, setSearchField] = useState("");
   const filteredCountries = countries.filter((robot) => {
@@ -26,13 +27,21 @@ const Home = ({ countries }) => {
 
   return (
     <React.Fragment>
-      <div className="filter">
+      <Filter className="filter">
         <SearchBox searchChange={onSearchChange} />
         <RegionDrop regionSearch={handleRegionChange} />
-      </div>
+      </Filter>
       <CardList countries={filterCountryByRegion} />
     </React.Fragment>
   );
 };
 
 export default Home;
+
+const Filter = styled.div`
+  display: flex;
+  justify-content: space-between;
+  margin: 2rem 5rem;
+  flex-wrap: wrap;
+  align-items:center
+`;
