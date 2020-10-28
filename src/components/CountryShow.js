@@ -23,7 +23,7 @@ const CountryShow = (props) => {
   } else
     return (
       <React.Fragment>
-        <button className="back-button" onClick={() => props.history.goBack()}>
+        <Button onClick={() => props.history.goBack()}>
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -40,7 +40,7 @@ const CountryShow = (props) => {
             <polyline points="12 19 5 12 12 5"></polyline>
           </svg>
           back
-        </button>
+        </Button>
         <CountryDetail key={currentCountry[0].name}>
           <ImageContainer
             style={{ backgroundImage: `url(${currentCountry[0].flag})` }}
@@ -97,6 +97,20 @@ const CountryShow = (props) => {
 };
 
 export default CountryShow;
+
+const Button = styled.button`
+  color: ${({ theme }) => theme.text};
+  background: ${({ theme }) => theme.background};
+  margin: 3rem 5rem;
+  padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  border: 0;
+
+  @media (max-width: 1032px) {
+    margin: 3rem 2rem;
+  }
+`;
 
 const ImageContainer = styled.div`
   display: flex;

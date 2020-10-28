@@ -52,4 +52,10 @@ const BorderList = styled.div`
       }
     }
   }
+
+  @media (max-width: 1032px) {
+    .borders {
+      flex-wrap: wrap;
+    }
+  }
 `;
