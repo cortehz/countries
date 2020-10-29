@@ -4,7 +4,6 @@ import { ThemeProvider } from "styled-components";
 import { useDarkMode } from "./useDarkMode";
 import { GlobalStyles } from "./Globalstyle";
 import { lightTheme, darkTheme } from "./Themes";
-import "./App.css";
 import Header from "./components/Header";
 import Home from "./components/Home";
 import CountryShow from "./components/CountryShow";
